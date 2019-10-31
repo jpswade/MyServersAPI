@@ -65,4 +65,12 @@ class MyServersApi
     {
         return $this->params;
     }
+
+    /**
+     * @return SoapClient
+     */
+    public function getClient(): SoapClient
+    {
+        return $this->client;
+    }
 }
