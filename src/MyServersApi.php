@@ -12,6 +12,7 @@ class MyServersApi
 
     /** @var SoapClient */
     private $client;
+
     /** @var stdClass */
     private $params;
 
@@ -21,6 +22,7 @@ class MyServersApi
      * @param string $url Simulator or Live Url
      * @param string $username
      * @param string $password
+     * @throws \SoapFault
      */
     public function __construct($url, $username, $password)
     {
@@ -54,5 +56,13 @@ class MyServersApi
         } else {
             return [];
         }
+    }
+
+    /**
+     * @return stdClass
+     */
+    public function getParams(): stdClass
+    {
+        return $this->params;
     }
 }
