@@ -32,6 +32,10 @@ Unblock at the bottom.
 A complete sample website replicating much of the functionality you currently get through MyServers is available in PHP.
 This contains examples for using most of the methods provided in the MyServers Api.
 
+# Example
+
+`MYSERVERS_API_USER=CXXXXXX@api.rapidswitch.com MYSERVERS_API_PASS=XXXXXXXXXXXXXXXXXXXXXXXXXXX php examples/ips.php`
+
 # Dependencies
 
 - SoapClient is required, you will need PHP compiled with [SOAP](http://php.net/manual/en/ref.soap.php).
