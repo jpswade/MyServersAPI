@@ -7,6 +7,9 @@ use stdClass;
 
 class MyServersApi
 {
+    const LIVE_URL = 'https://api.rapidswitch.com/MyServersApi/MyServersApi.svc?wsdl';
+    const TEST_URL = 'https://api.rapidswitch.com/MyServersApi/Simulator.svc?wsdl';
+
     /** @var SoapClient */
     private $client;
     /** @var stdClass */
