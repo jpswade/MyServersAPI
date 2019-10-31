@@ -1,0 +1,35 @@
+body, h1, h2, h3, td, input {
+	font-family: Verdana, Tahoma, sans-serif;
+}
+body, td {
+	font-size: 10pt;
+}
+a img {
+	border: none;
+}
+h1 {
+	font-size: 1.3em;
+}
+h2 {
+	font-size: 1.1em;
+}
+h3 {
+	font-size: 1em;
+}
+pre {
+	font-family: Consolas, Courier New, Courier;
+	font-size: 10px;
+	background-color: #EEE;
+	border: solid 1px #DDD;
+	padding: 5px;
+}
+.page {
+	width: 800px;
+}
+.left {
+	width: 500px;
+}
+.right {
+	float: right;
+	width: 280px;
+}
