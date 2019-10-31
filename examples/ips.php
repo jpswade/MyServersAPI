@@ -1,9 +1,11 @@
 <?php
 
+include(__DIR__ . '/../src/MyServersApi.php');
+
 use Deaduseful\MyServersApi\MyServersApi;
 
 $api = new MyServersApi(MyServersApi::LIVE_URL, getenv('MYSERVERS_API_USER'), getenv('MYSERVERS_API_PASS'));
-$servers = MyServersApi::arrayHelper($api->GetAllServerDetails($api->getParams())->GetAllServerDetailsResult, 'ServerInfo');
+$servers = MyServersApi::arrayHelper($api->getClient()->GetAllServerDetails($api->getParams())->GetAllServerDetailsResult, 'ServerInfo');
 $list = [];
 foreach ($servers as $server) {
     $id = $server->ServiceID;
