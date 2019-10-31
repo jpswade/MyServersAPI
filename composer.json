@@ -1,5 +1,5 @@
 {
-    "name": "jpswade/myserversapi",
+    "name": "deaduseful/myserversapi",
     "description": "RapidSwitch MyServersAPI (PHP) library",
     "type": "library",
     "require": {
