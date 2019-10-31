@@ -1,0 +1,14 @@
+{
+    "name": "jpswade/myserversapi",
+    "description": "RapidSwitch MyServersAPI (PHP) library",
+    "type": "library",
+    "require": {
+        "ext-soap": "^7.3"
+    },
+    "authors": [
+        {
+            "name": "James Wade",
+            "email": "jpswade@gmail.com"
+        }
+    ]
+}
