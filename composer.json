@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Deaduseful\\MyServersApi": "src"
+            "Deaduseful\\MyServersApi\\": "src"
         }
     }
 }
