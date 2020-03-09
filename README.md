@@ -1,8 +1,8 @@
 # MyServersAPI - RapidSwitch MyServersAPI (PHP) library
 
-# About
+## About
 
-## About RapidSwitch
+### About RapidSwitch
 
 [RapidSwitch](https://www.rapidswitch.com/) is a server hosting company, provides servers, managed servers solutions, collocation services, and virtual
  servers in the United Kingdom. It also provides IP transit and other connectivity services. The company offers server
@@ -11,12 +11,12 @@
   and is based in Maidenhead, the United Kingdom. As of May 11, 2009, RapidSwitch Ltd. operates as a subsidiary of 
   iomart Group plc.
   
-## About MyServers Api
+### About MyServers Api
 
 The MyServers Api allows clients of RapidSwitch to programatically obtain information on the servers they have hosted 
 with RapidSwitch, and to perform operations on a server.
 
-# Documentation
+## Documentation
 
 The MyServersApi documentation is available to view online, or to download for offline use.
 
@@ -27,15 +27,15 @@ NB: If you download the documentation for offline use, Windows will automaticall
 came from the Internet. To unblock it, find the file in Windows Explorer, right click it, click Properties, then click 
 Unblock at the bottom.
 
-# Samples
+## Samples
 
 A complete sample website replicating much of the functionality you currently get through MyServers is available in PHP.
 This contains examples for using most of the methods provided in the MyServers Api.
 
-# Example
+## Example
 
 `MYSERVERS_API_USER=CXXXXXX@api.rapidswitch.com MYSERVERS_API_PASS=XXXXXXXXXXXXXXXXXXXXXXXXXXX php examples/ips.php`
 
-# Dependencies
+## Dependencies
 
 - SoapClient is required, you will need PHP compiled with [SOAP](http://php.net/manual/en/ref.soap.php).
