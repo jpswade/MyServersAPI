@@ -96,4 +96,15 @@ class MyServersApi
         $this->params = $params;
         return $this;
     }
+
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return MyServersApi
+     */
+    public function addParam($key, $value): MyServersApi
+    {
+        $this->params->{$key} = $value;
+        return $this;
+    }
 }
