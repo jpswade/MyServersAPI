@@ -27,10 +27,12 @@ class MyServersApi
     public function __construct($url, $username, $password)
     {
         $this->client = new SoapClient($url);
-        $this->params = new StdClass;
-        $this->params->authInfo = new StdClass;
-        $this->params->authInfo->Username = $username;
-        $this->params->authInfo->Password = $password;
+        $params = new StdClass;
+        $authInfo = new StdClass;
+        $authInfo->Username = $username;
+        $authInfo->Password = $password;
+        $params->authInfo = $authInfo;
+        $this->setParams($params);
     }
 
     /**
@@ -72,5 +74,15 @@ class MyServersApi
     public function getClient(): SoapClient
     {
         return $this->client;
+    }
+
+    /**
+     * @param stdClass $params
+     * @return MyServersApi
+     */
+    public function setParams(stdClass $params): MyServersApi
+    {
+        $this->params = $params;
+        return $this;
     }
 }
