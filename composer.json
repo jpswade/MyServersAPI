@@ -10,5 +10,10 @@
             "name": "James Wade",
             "email": "jpswade@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Deaduseful\\MyServersApi\\": "src"
+        }
+    }
 }
