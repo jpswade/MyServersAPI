@@ -2,7 +2,7 @@
 
 namespace Deaduseful\MyServersApi;
 
-use SoapClient;
+use Deaduseful\MyServersApi\MySoapClient as SoapClient;
 use stdClass;
 
 class MyServersApi
@@ -22,11 +22,12 @@ class MyServersApi
      * @param string $url Simulator or Live Url
      * @param string $username
      * @param string $password
+     * @param MySoapClient|null $client
      * @throws \SoapFault
      */
-    public function __construct($url, $username, $password)
+    public function __construct($url, $username, $password, SoapClient $client = null)
     {
-        $client = new SoapClient($url);
+        $client = $client ? $client : new SoapClient($url);
         $this->setClient($client);
         $params = new StdClass;
         $authInfo = new StdClass;
@@ -70,6 +71,16 @@ class MyServersApi
     }
 
     /**
+     * @param stdClass $params
+     * @return MyServersApi
+     */
+    public function setParams(stdClass $params): MyServersApi
+    {
+        $this->params = $params;
+        return $this;
+    }
+
+    /**
      * @return SoapClient
      */
     public function getClient(): SoapClient
@@ -84,16 +95,6 @@ class MyServersApi
     public function setClient(SoapClient $client): MyServersApi
     {
         $this->client = $client;
-        return $this;
-    }
-
-    /**
-     * @param stdClass $params
-     * @return MyServersApi
-     */
-    public function setParams(stdClass $params): MyServersApi
-    {
-        $this->params = $params;
         return $this;
     }
 
