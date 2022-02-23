@@ -25,16 +25,22 @@ class MyServersApi
      * @param MySoapClient|null $client
      * @throws \SoapFault
      */
-    public function __construct($url, $username, $password, SoapClient $client = null)
+    public function __construct(string $url, string $username, string $password, SoapClient $client = null)
     {
-        $client = $client ? $client : new SoapClient($url);
+        $client = $client ?: new SoapClient($url);
         $this->setClient($client);
         $params = new StdClass;
+        $authInfo = $this->buildAuthInfo($username, $password);
+        $params->authInfo = $authInfo;
+        $this->setParams($params);
+    }
+
+    public function buildAuthInfo($username, $password): stdClass
+    {
         $authInfo = new StdClass;
         $authInfo->Username = $username;
         $authInfo->Password = $password;
-        $params->authInfo = $authInfo;
-        $this->setParams($params);
+        return $authInfo;
     }
 
     /**
@@ -47,7 +53,7 @@ class MyServersApi
      * @param string $typename
      * @return array
      */
-    public static function arrayHelper($var, $typename)
+    public static function arrayHelper($var, string $typename): array
     {
         if (isset($var->$typename) === false) {
             return [];
@@ -103,7 +109,7 @@ class MyServersApi
      * @param mixed $value
      * @return MyServersApi
      */
-    public function addParam($key, $value): MyServersApi
+    public function addParam(string $key, $value): MyServersApi
     {
         $this->params->{$key} = $value;
         return $this;
