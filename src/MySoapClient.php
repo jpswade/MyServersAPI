@@ -9,19 +9,13 @@ class MySoapClient extends SoapClient
 {
     private $maximum_retries = 5;
 
-    /**
-     * @param string $name
-     * @param mixed $args
-     * @return false|mixed
-     * @throws SoapFault
-     */
-    public function __call($name, array $args)
+    public function __call($function_name, $arguments)
     {
         $result = false;
         $retryCount = 0;
         while (!$result && $retryCount < $this->maximum_retries) {
             try {
-                $result = parent::$name($args);
+                $result = parent::$function_name($arguments);
             } catch (SoapFault $fault) {
                 if ($fault->faultstring != 'Could not connect to host') {
                     throw $fault;
