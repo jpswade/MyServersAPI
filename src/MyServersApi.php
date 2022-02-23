@@ -2,7 +2,7 @@
 
 namespace Deaduseful\MyServersApi;
 
-use Deaduseful\MyServersApi\MySoapClient as SoapClient;
+use SoapClient;
 use stdClass;
 
 class MyServersApi
