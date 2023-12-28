@@ -3,7 +3,7 @@
     "description": "RapidSwitch MyServersAPI (PHP) library",
     "type": "library",
     "require": {
-        "ext-soap": "^7.3"
+        "ext-soap": "*"
     },
     "authors": [
         {
