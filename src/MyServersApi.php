@@ -18,14 +18,9 @@ class MyServersApi
 
     /**
      * MyServersApi constructor.
-     *
-     * @param string $url Simulator or Live Url
-     * @param string $username
-     * @param string $password
-     * @param MySoapClient|null $client
      * @throws \SoapFault
      */
-    public function __construct(string $url, string $username, string $password, SoapClient $client = null)
+    public function __construct(string $url, string $username, string $password, ?SoapClient $client = null)
     {
         $client = $client ?: new SoapClient($url);
         $this->setClient($client);
@@ -48,10 +43,6 @@ class MyServersApi
      * on the number of elements in the array - 0 elements returns an empty class, 1 element returns the
      * element itself, and more than 1 elements returns an array.  This helper function always returns
      * an array.
-     *
-     * @param mixed $var
-     * @param string $typename
-     * @return array
      */
     public static function arrayHelper($var, string $typename): array
     {
@@ -68,47 +59,28 @@ class MyServersApi
         }
     }
 
-    /**
-     * @return stdClass
-     */
     public function getParams(): stdClass
     {
         return $this->params;
     }
 
-    /**
-     * @param stdClass $params
-     * @return MyServersApi
-     */
     public function setParams(stdClass $params): MyServersApi
     {
         $this->params = $params;
         return $this;
     }
 
-    /**
-     * @return SoapClient
-     */
     public function getClient(): SoapClient
     {
         return $this->client;
     }
 
-    /**
-     * @param SoapClient $client
-     * @return MyServersApi
-     */
     public function setClient(SoapClient $client): MyServersApi
     {
         $this->client = $client;
         return $this;
     }
 
-    /**
-     * @param string $key
-     * @param mixed $value
-     * @return MyServersApi
-     */
     public function addParam(string $key, $value): MyServersApi
     {
         $this->params->{$key} = $value;
